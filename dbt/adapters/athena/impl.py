@@ -310,7 +310,7 @@ class AthenaAdapter(SQLAdapter):
 
                 relations.append(
                     self.Relation.create(
-                        schema=schema_relation.schema,
+                        schema=schema_relation.schema.strip("\""),
                         database=schema_relation.database,
                         identifier=table["Name"],
                         quote_policy=quote_policy,
